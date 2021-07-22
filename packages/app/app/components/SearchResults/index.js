@@ -20,6 +20,7 @@ class SearchResults extends React.Component {
               {...this.props}
               albumInfoSearch={this.albumInfoSearch.bind(this)}
               artistInfoSearch={this.artistInfoSearch.bind(this)}
+              podcastInfoSearch={this.podcastInfoSearch.bind(this)}
             />
           </div>
         </div>
@@ -57,7 +58,7 @@ class SearchResults extends React.Component {
     );
   }
 
-  renderLastFmPane(collection) {
+  renderTrackListPane(collection) {
     if (typeof collection !== 'undefined') {
 
       return (
@@ -73,13 +74,15 @@ class SearchResults extends React.Component {
       );
     } else {
       return (
-        <Tab.Pane loading={this.props.unifiedSearchStarted} attached={false}>
-          <div className={styles.pane_container}>Nothing found.</div>
+        <Tab.Pane
+          loading={this.props.unifiedSearchStarted}
+          attached={false}
+        >
+          <div className={styles.pane_container}>{this.props.t('empty')}</div>
         </Tab.Pane>
       );
     }
   }
-
 
   renderPlaylistPane() {
     return (
@@ -121,11 +124,23 @@ class SearchResults extends React.Component {
       },
       {
         menuItem: 'Tracks',
-        render: () => this.renderLastFmPane(this.props.trackSearchResults.info)
+        render: () => this.renderTrackListPane(this.props.trackSearchResults.info)
       },
       {
         menuItem: 'Playlist',
-        render: () => this.renderPlaylistPane(this.props.playlistSearchResults)
+        render: () => this.renderPlaylistPane()
+      },
+      {
+        menuItem: 'LiveStream',
+        render: () => this.renderTrackListPane(this.props.liveStreamSearchResults.info)
+      },
+      {
+        menuItem: 'Podcast',
+        render: () =>
+          this.renderPane(
+            this.props.podcastSearchResults,
+            this.podcastInfoSearch.bind(this)
+          )
       }
     ];
 
@@ -140,6 +155,11 @@ class SearchResults extends React.Component {
   artistInfoSearch(artistId) {
     this.props.artistInfoSearch(artistId);
     this.props.history.push('/artist/' + artistId);
+  }
+
+  podcastInfoSearch(podcastId, releaseType, release) {
+    this.props.albumInfoSearch(podcastId, releaseType, release);
+    this.props.history.push('/album/' + podcastId);
   }
 
   render() {

@@ -17,7 +17,11 @@
   font-variant: small-caps;
 
   &:hover {
-    background: $background3;
+    background: $bgdarker;
+  }
+
+  i {
+    margin: 0;
   }
 
   span {

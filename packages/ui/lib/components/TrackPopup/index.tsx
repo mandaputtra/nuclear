@@ -3,110 +3,138 @@ import React from 'react';
 import _ from 'lodash';
 import { Icon, Dropdown } from 'semantic-ui-react';
 
-import ContextPopup from '../ContextPopup';
+import ContextPopup, { ContextPopupProps } from '../ContextPopup';
 import PopupButton from '../PopupButton';
 import PopupDropdown from '../PopupDropdown';
 
-const TrackPopup: React.FC<{
-  trigger: React.ReactNode;
-  artist: string;
-  title: string;
-  thumb: string;
-  playlists: Array<{
+export type TrackPopupProps = {
+  trigger: ContextPopupProps['trigger'];
+  artist?: ContextPopupProps['artist'];
+  title: ContextPopupProps['title'];
+  thumb?: ContextPopupProps['thumb'];
+
+  playlists?: Array<{
     name: string;
   }>;
 
-  withAddToQueue: boolean;
-  withPlayNow: boolean;
-  withAddToFavorites: boolean;
-  withAddToPlaylist: boolean;
-  withAddToDownloads: boolean;
+  strings?: TrackPopupStrings;
 
-  onAddToQueue: () => void;
-  onPlayNow: () => void;
-  onAddToFavorites: () => void;
-  onAddToPlaylist: ({name: string}) => void;
-  onAddToDownloads: () => void;
-}> = ({
+  withAddToQueue?: boolean;
+  withPlayNow?: boolean;
+  withPlayNext?: boolean;
+  withAddToFavorites?: boolean;
+  withAddToPlaylist?: boolean;
+  withAddToDownloads?: boolean;
+
+  onAddToQueue?: () => void;
+  onPlayNext?: () => void;
+  onPlayNow?: () => void;
+  onAddToFavorites?: () => void;
+  onAddToPlaylist?: ({ name: string }) => void;
+  onAddToDownloads?: () => void;
+};
+
+export type TrackPopupStrings = {
+  textAddToQueue: string;
+  textPlayNow: string;
+  textPlayNext: string;
+  textAddToFavorites: string;
+  textAddToPlaylist: string;
+  textAddToDownloads: string;
+}
+
+const TrackPopup: React.FC<TrackPopupProps> = ({
   trigger,
   artist,
   title,
   thumb,
   playlists,
-  withAddToQueue,
-  withPlayNow,
-  withAddToFavorites,
-  withAddToPlaylist,
-  withAddToDownloads,
+
+  withAddToQueue=true,
+  withPlayNow=true,
+  withPlayNext=true,
+  withAddToFavorites=true,
+  withAddToPlaylist=true,
+  withAddToDownloads=true,
+  strings={
+    textAddToQueue: 'Add to queue',
+    textPlayNow: 'Play now',
+    textPlayNext: 'Play next',
+    textAddToFavorites: 'Add to favorites',
+    textAddToPlaylist: 'Add to playlist',
+    textAddToDownloads: 'Download'
+  },
   onAddToQueue,
+  onPlayNext,
   onPlayNow,
   onAddToFavorites,
   onAddToPlaylist,
   onAddToDownloads
-}) => (
+}) => 
   <ContextPopup
     trigger={trigger}
     artist={artist}
     title={title}
     thumb={thumb}
   >
-    {
-      withAddToQueue &&
+    {withAddToQueue && (
       <PopupButton
         onClick={onAddToQueue}
         ariaLabel='Add track to queue'
         icon='plus'
-        label='Add to queue'
+        label={strings.textAddToQueue}
       />
-    }
+    )}
 
-    {
-      withPlayNow &&
+    {withPlayNext && (
+      <PopupButton
+        onClick={onPlayNext}
+        ariaLabel='Add track to play next'
+        icon='play'
+        label={strings.textPlayNext}
+      />
+    )}
+
+    {withPlayNow && (
       <PopupButton
         onClick={onPlayNow}
         ariaLabel='Play this track now'
         icon='play'
-        label='Play now'
+        label={strings.textPlayNow}
       />
-    }
+    )}
 
-    {
-      withAddToFavorites &&
+    {withAddToFavorites && (
       <PopupButton
         onClick={onAddToFavorites}
         ariaLabel='Add this track to favorites'
-        icon='star'
-        label='Add to favorites'
+        icon='heart'
+        label={strings.textAddToFavorites}
       />
-    }
+    )}
 
-    {
-      withAddToPlaylist && Boolean(playlists.length) && 
-      <PopupDropdown text='Add to playlist'>
-        {_.map(playlists, (playlist, i) => {
-          return (
-            <Dropdown.Item
-              key={i}
-              onClick={() => onAddToPlaylist(playlist)}
-            >
-              <Icon name='music' />
-              {playlist.name}
-            </Dropdown.Item>
-          );
-        })}
+    {withAddToPlaylist && Boolean(playlists) && (
+      <PopupDropdown text={strings.textAddToPlaylist}>
+        {_.map(playlists, (playlist, i) => (
+          <Dropdown.Item
+            key={i}
+            onClick={() => onAddToPlaylist(playlist)}
+          >
+            <Icon name='music' />
+            {playlist.name}
+          </Dropdown.Item>
+        ))}
       </PopupDropdown>
-    }
+    )}
 
-    {
-      withAddToDownloads &&
+    {withAddToDownloads && (
       <PopupButton
         onClick={onAddToDownloads}
         ariaLabel='Download this track'
         icon='download'
-        label='Download'
+        label={strings.textAddToDownloads}
       />
-    }
-  </ContextPopup>
-);
+    )}
+  </ContextPopup>;
 
 export default TrackPopup;

@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} đã được thêm vào mục tải xuống.",
     "download-toast-title": "Album đã thêm vào mục tải xuống",
     "error-load": "Không thể tải được album. Vui lòng thử lại sau hoặc tạo một báo cáo trên Github",
-    "queue": "Thêm album vào playlist"
+    "genre": "Thể loại:",
+    "play": "Phát",
+    "queue": "Thêm album vào playlist",
+    "tracks": "Bài hát:",
+    "year": "Năm:"
   },
   "app": {
     "collection": "Bộ sưu tập",
@@ -12,6 +16,7 @@
     "downloads": "Tải xuống",
     "equalizer": "Bộ chỉnh âm",
     "favorite-albums": "Albums yêu thích",
+    "favorite-artists": "Nghệ sĩ yêu thích",
     "favorite-tracks": "Bản nhạc yêu thích",
     "library": "Thư viện trên máy",
     "lyrics": "Lời bài hát",
@@ -23,21 +28,21 @@
     "visualizer": "Visualizer"
   },
   "artist": {
-    "count": "Play counts",
+    "count": "Số lượt nghe",
     "queue": "Thêm tất cả bài hát vào playlist",
     "similar": "Nghệ sỹ tương tự",
     "title": "Tên bài hát",
-    "tour": "On tour"
+    "tour": "Đang lưu diễn"
   },
   "dashboard": {
     "artist": "Nghệ sỹ",
     "best": "Best new music",
-    "best-new-albums": "Best new albums",
-    "best-new-tracks": "Best new tracks",
+    "best-new-albums": "Album mới thịnh hành",
+    "best-new-tracks": "Bài hát mới thịnh hành",
     "genres": "Thể loại",
-    "lastfm-title": "Top bài hát từ LastFm.",
-    "news": "Tin mới",
+    "news": "Tin tức",
     "playcounts": "Số lượt nghe",
+    "popular-track-title": "Top bài hát từ Deezer.",
     "title": "Tên bài hát",
     "top": "Top bài hát"
   },
@@ -54,6 +59,11 @@
     "empty": "Không có album ưa thích",
     "empty-help": "Album được đánh dấu ưa thích sẽ xuất hiện ở đây.",
     "header": "Album ưa thích của bạn"
+  },
+  "favorite-artists": {
+    "empty": "Không có nghệ sĩ yêu thích",
+    "empty-help": "Nghệ sĩ được đánh dấu ưa thích sẽ xuất hiện ở đây.",
+    "header": "Nghệ sĩ ưa thích của bạn"
   },
   "favorites": {
     "artist": "Nghệ sỹ",
@@ -91,9 +101,9 @@
     "not-found": "Không tìm thấy lời bài hát."
   },
   "option-control": {
-    "autoradio": "Autoradio",
+    "autoradio": "Tự động tìm kiếm bài hát",
     "loop": "Phát lặp lại",
-    "mini-player": "Miniplayer",
+    "mini-player": "Thu nhỏ trình phát",
     "shuffle": "Phát ngẫu nhiên"
   },
   "player": {
@@ -102,16 +112,37 @@
     "previous-button": "Bài nhạc trước"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Thêm bài hát đã chọn vào tải về",
+    "add-selected-tracks-to-favorites": "Thêm bài hát đã chọn vào ưa thích",
+    "add-selected-tracks-to-queue": "Thêm bài hát đã chọn vào danh sách phát",
+    "album": "Album",
     "artist": "Nghệ sỹ",
     "delete": "Xóa playlist này",
     "dialog-placeholder": "Tên playlist...",
+    "duration": "Thời lượng",
     "empty": "Không có playlist nào.",
     "empty-help": "Tạo hoặc nhập playlist bằng link!",
+    "error-empty-data": "Không có dữ liệu",
+    "error-invalid-data": "Dữ liệu lỗi",
+    "error-open-file": "Không thể mở file",
+    "error-save-file": "Không thể lưu file",
+    "export-button": "Xuất playlist ra file (JSON)",
+    "export-fail-title": "Xuất playlist thất bại",
+    "export-success-title": "Xuất playlist thành công",
     "header": "Playlist của bạn",
+    "import-button": "Nhập playlist từ file (JSON)",
+    "import-fail-title": "Thêm Playlist thất bại",
+    "import-success-title": "Thêm Playlist thành công",
+    "play-selected-tracks-now": "Phát bài hát đã chọn",
+    "playlist-created": "{{name}} đã được tạo",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Thêm playlist vào hàng chờ",
     "rename": "Đổi tên playlist",
     "songs": "{{total}} bài hát",
-    "title": "Tên bài hát"
+    "songs_plural": "{{total}} songs",
+    "title": "Tên bài hát",
+    "tracks-selected-plural": "bài hát đã chọn",
+    "tracks-selected-singular": "bài hát đã chọn"
   },
   "plugins": {
     "add-a-plugin": "Thêm plugin",
@@ -146,20 +177,27 @@
   },
   "search": {
     "album": "Album",
+    "album_plural": "Albums",
     "artist": "Nghệ sỹ",
+    "artist_plural": "Artists",
     "clear-history": "Xoá lịch sử",
     "empty": "Không tìm thấy.",
     "last-searches": "Lần tìm kiếm cuối",
     "placeholder": "Tìm kiếm...",
     "playlist": "Playlist",
+    "playlist_plural": "Playlists",
     "queue-add": "Thêm tất cả vào danh sách đang ",
     "track": "Bài hát",
+    "track_plural": "Tracks",
     "you-can-search-for": "Bạn có thể tìm cho:"
+  },
+  "seekbar": {
+    "segment-popup": "Phần không phải bài hát "
   },
   "settings": {
     "api-port": "Port cho api",
-    "api-url": "Đường dẫn cho api",
-    "autoradio": "Autoradio",
+    "api-url": "",
+    "autoradio": "Tự động tìm kiếm bài hát",
     "autoradio-craziness": "Autoradio craziness",
     "autoradio-craziness-description": "Autoradio sẽ chọn các bài khác không tương tự với các bài hát trong danh sách đang phát",
     "autoradio-description": "Tự động thêm các bài hát tương tự khi danh sách phát kết thúc",
@@ -191,6 +229,15 @@
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "loop-after-queue-end": "Lặp lại sau khi kết thúc bài hát cuối trong danh sách phát",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Quản lý tải về",
     "mini-player": "Dùng chế độ mini cho trình phát",
     "notification-timeout": "Thời gian hiển thị thông báo",
@@ -202,6 +249,7 @@
     "shuffle-when-going-back": "Phát ngẫu nhiên cả bài hát trước đó",
     "shuffle-when-going-back-description": "Phát một bài hát ngẫu nhiên khi bật chức năng trộn bài và nhấp vào nút bài hát trước đó",
     "social": "Mạng xã hội",
+    "streaming": "Streaming",
     "track-duration": "Hiển thị thời lượng bản nhạc trên thanh điều kiển",
     "user": "User:",
     "youtube": "Youtube",
@@ -216,6 +264,6 @@
     "title": "Tên bài hát"
   },
   "visualizer": {
-    "exit-fullscreen": "Press ESC to exit full screen"
+    "exit-fullscreen": "Nhấn ESC để thoát khỏi chế độ toàn màn hình"
   }
 }

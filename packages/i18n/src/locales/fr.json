@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} a été ajouté aux téléchargements.",
     "download-toast-title": "L'album a été ajouté aux téléchargements",
     "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Ajouter l'album à la liste de lecture"
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Ajouter l'album à la liste de lecture",
+    "tracks": "Tracks:",
+    "year": "Year:"
   },
   "app": {
     "collection": "Collection",
@@ -12,6 +16,7 @@
     "downloads": "Téléchargements",
     "equalizer": "Égalisateur",
     "favorite-albums": "Albums favoris",
+    "favorite-artists": "Favorite Artists",
     "favorite-tracks": "Favoris",
     "library": "Bibliothèque locale",
     "lyrics": "Paroles",
@@ -35,9 +40,9 @@
     "best-new-albums": "Meilleurs albums",
     "best-new-tracks": "Meilleurs morceaux",
     "genres": "Genres",
-    "lastfm-title": "Meilleurs morceaux de LastFm.",
     "news": "Actualités",
     "playcounts": "Nombre d'écoute",
+    "popular-track-title": "Meilleurs morceaux de Deezer",
     "title": "Titre",
     "top": "Meilleurs morceaux"
   },
@@ -54,6 +59,11 @@
     "empty": "Aucun album favoris",
     "empty-help": "Essayez d'ajouter des albums à vos favoris, ils apparaîtront ici !",
     "header": "Vos albums favoris"
+  },
+  "favorite-artists": {
+    "empty": "No favorite artists",
+    "empty-help": "Try adding some artists to favorites and they will appear here!",
+    "header": "Your favorite artists"
   },
   "favorites": {
     "artist": "Artiste",
@@ -102,17 +112,37 @@
     "previous-button": "Musique précédente"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Add selected to downloads",
+    "add-selected-tracks-to-favorites": "Add selected to favorites",
+    "add-selected-tracks-to-queue": "Add selected to queue",
+    "album": "Album",
     "artist": "Artiste",
     "delete": "Supprimer cette playlist",
     "dialog-placeholder": "Nom de la playlist...",
+    "duration": "Length",
     "empty": "Aucune playlist.",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
+    "error-empty-data": "Empty data",
+    "error-invalid-data": "Invalid data",
+    "error-open-file": "Can not open file",
+    "error-save-file": "Can not save file",
+    "export-button": "Export playlist (JSON)",
+    "export-fail-title": "Playlist export fail",
+    "export-success-title": "Playlist exported successfully",
     "header": "Your playlists",
+    "import-button": "Import from file (JSON)",
+    "import-fail-title": "Playlist import fail",
+    "import-success-title": "Playlist imported successfully",
+    "play-selected-tracks-now": "Play selected now",
+    "playlist-created": "{{name}} created",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Ajouter la playlist à la file de lecture",
     "rename": "Renommer cette playlist",
     "songs": "{{total}} morceau",
     "songs_plural": "{{total}} morceaux",
-    "title": "Titre"
+    "title": "Titre",
+    "tracks-selected-plural": "tracks selected",
+    "tracks-selected-singular": "track selected"
   },
   "plugins": {
     "add-a-plugin": "Ajouter un plugin",
@@ -161,6 +191,9 @@
     "track_plural": "Morceaux",
     "you-can-search-for": "You can search for:"
   },
+  "seekbar": {
+    "segment-popup": "Non-music"
+  },
   "settings": {
     "api-port": "Port utilisé par l'api",
     "api-url": "",
@@ -196,6 +229,15 @@
     "login": "Se connecter",
     "logout": "Se déconnecter",
     "loop-after-queue-end": "Lecture en boucle à la fin de la liste de lecture",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Download control",
     "mini-player": "Use mini player style",
     "notification-timeout": "Temps d'affichage des notifications",
@@ -207,6 +249,7 @@
     "shuffle-when-going-back": "Mélanger les morceaux précédents",
     "shuffle-when-going-back-description": "Joue un morceau aléatoire lorsque le bouton de morceau précédent est cliqué",
     "social": "Social",
+    "streaming": "Streaming",
     "track-duration": "Afficher la durée du morceau sur la barre d'avancement de lecture",
     "user": "Utilisateur :",
     "youtube": "YouTube",

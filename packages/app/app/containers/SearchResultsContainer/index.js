@@ -12,10 +12,13 @@ function mapStateToProps(state) {
   return {
     artistSearchResults: state.search.artistSearchResults,
     albumSearchResults: state.search.albumSearchResults,
+    podcastSearchResults: state.search.podcastSearchResults,
     trackSearchResults: state.search.trackSearchResults,
     playlistSearchResults: state.search.playlistSearchResults,
+    liveStreamSearchResults: state.search.liveStreamSearchResults,
     unifiedSearchStarted: state.search.unifiedSearchStarted,
     playlistSearchStarted: state.search.playlistSearchStarted,
+    liveStreamSearchStarted: state.search.liveStreamSearchStarted,
     streamProviders: state.plugin.plugins.streamProviders,
     metaProviders: state.plugin.plugins.metaProviders,
     selectedPlugins: state.plugin.selected
@@ -25,6 +28,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = dispatch => bindActionCreators({
   albumInfoSearch: SearchActions.albumInfoSearch,
   artistInfoSearch: SearchActions.artistInfoSearch,
+  podcastInfoSearch: SearchActions.podcastSearch,
   addToQueue: QueueActions.addToQueue,
   clearQueue: QueueActions.clearQueue,
   startPlayback: PlayerActions.startPlayback,

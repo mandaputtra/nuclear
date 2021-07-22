@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} has been added to downloads.",
     "download-toast-title": "Album added to downloads",
     "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Albümü sıraya ekle"
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Albümü sıraya ekle",
+    "tracks": "Tracks:",
+    "year": "Year:"
   },
   "app": {
     "collection": "Koleksiyon",
@@ -12,6 +16,7 @@
     "downloads": "İndirilenler",
     "equalizer": "Ses dengesi",
     "favorite-albums": "Favorite Albums",
+    "favorite-artists": "Favorite Artists",
     "favorite-tracks": "Favori müzikler",
     "library": "Kütüphane",
     "lyrics": "Şarkının sözleri",
@@ -35,9 +40,9 @@
     "best-new-albums": "En iyi albümler",
     "best-new-tracks": "En iyi müzikler",
     "genres": "Müzik türü",
-    "lastfm-title": "Lastfm.'den en iyi müzikler",
     "news": "Haberler",
     "playcounts": "Oynatma sayısı",
+    "popular-track-title": "Lastfm.'den en iyi müzikler",
     "title": "Başlık",
     "top": "Popüler müzikler"
   },
@@ -54,6 +59,11 @@
     "empty": "No favorite albums",
     "empty-help": "Try adding some albums to favorites and they will appear here!",
     "header": "Your favorite albums"
+  },
+  "favorite-artists": {
+    "empty": "No favorite artists",
+    "empty-help": "Try adding some artists to favorites and they will appear here!",
+    "header": "Your favorite artists"
   },
   "favorites": {
     "artist": "Şarkıcı",
@@ -102,17 +112,37 @@
     "previous-button": "Önceki Müzik butonu"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Add selected to downloads",
+    "add-selected-tracks-to-favorites": "Add selected to favorites",
+    "add-selected-tracks-to-queue": "Add selected to queue",
+    "album": "Album",
     "artist": "Şarkıcı",
     "delete": "Oynatma listesini sil",
     "dialog-placeholder": "Oynatma listesi adı...",
+    "duration": "Length",
     "empty": "Oynatma listesi yok",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
+    "error-empty-data": "Empty data",
+    "error-invalid-data": "Invalid data",
+    "error-open-file": "Can not open file",
+    "error-save-file": "Can not save file",
+    "export-button": "Export playlist (JSON)",
+    "export-fail-title": "Playlist export fail",
+    "export-success-title": "Playlist exported successfully",
     "header": "Your playlists",
+    "import-button": "Import from file (JSON)",
+    "import-fail-title": "Playlist import fail",
+    "import-success-title": "Playlist imported successfully",
+    "play-selected-tracks-now": "Play selected now",
+    "playlist-created": "{{name}} created",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Add playlist to queue",
     "rename": "Oynatma listesini yeniden adlandır.",
     "songs": "{{total}} müzik",
     "songs_plural": "{{total}} müzik",
-    "title": "Başlık"
+    "title": "Başlık",
+    "tracks-selected-plural": "tracks selected",
+    "tracks-selected-singular": "track selected"
   },
   "plugins": {
     "add-a-plugin": "Add a plugin",
@@ -161,6 +191,9 @@
     "track_plural": "Şarkılar",
     "you-can-search-for": "You can search for:"
   },
+  "seekbar": {
+    "segment-popup": "Non-music"
+  },
   "settings": {
     "api-port": "Api tarafından kullanılan port.",
     "api-url": "",
@@ -196,6 +229,15 @@
     "login": "Giriş yap",
     "logout": "Çıkış yap",
     "loop-after-queue-end": "Liste bitince baştan başlat.",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Download control",
     "mini-player": "Use mini player style",
     "notification-timeout": "Bildirim zaman aşımı",
@@ -207,6 +249,7 @@
     "shuffle-when-going-back": "Önceki Şarkıyla karıştır.",
     "shuffle-when-going-back-description": "Karıştırma aktif ve önceki şarkı butonu aktifse random şarkı çal",
     "social": "Sosyal Medya",
+    "streaming": "Streaming",
     "track-duration": "Şarkı süresini göster.",
     "user": "Kullanıcı:",
     "youtube": "Youtube",

@@ -5,13 +5,16 @@ const initialState = {
   plugins: [],
   artistSearchResults: [],
   albumSearchResults: [],
+  podcastSearchResults: [],
   trackSearchResults: [],
   playlistSearchResults: [],
+  liveStreamSearchResults: [],
   albumDetails: {},
   artistDetails: {},
   searchHistory: [],
   unifiedSearchStarted: false,
   playlistSearchStarted: false,
+  liveStreamSearchStarted: false,
   isFocused: false
 };
 
@@ -19,6 +22,13 @@ function reduceAlbumSearchSuccess(state, action) {
   return {
     ...state,
     albumSearchResults: action.payload
+  };
+}
+
+function reducePodcastSearchSuccess(state, action) {
+  return {
+    ...state,
+    podcastSearchResults: action.payload
   };
 }
 
@@ -58,6 +68,21 @@ function reduceYoutubePlaylistSearchSuccess(state, action) {
   };
 }
 
+function reduceYoutubeLiveStreamSearchStart(state, action) {
+  return {
+    ...state,
+    liveStreamSearchStarted: action.payload.terms,
+    liveStreamSearchResults: []
+  };
+}
+
+function reduceYoutubeLiveStreamSearchSuccess(state, action) {
+  return {
+    ...state,
+    liveStreamSearchResults: action.payload
+  };
+}
+
 function reduceSearchDropdownDisplay(state, action) {
   return {
     ...state,
@@ -85,7 +110,8 @@ export default function SearchReducer(state = initialState, action) {
     return reduceAlbumSearchSuccess(state, action);
   case Search.ARTIST_SEARCH_SUCCESS:
     return reduceArtistSearchSuccess(state, action);
-
+  case Search.PODCAST_SEARCH_SUCCESS:
+    return reducePodcastSearchSuccess(state, action);
   case Search.ALBUM_INFO_SEARCH_START:
     return {
       ...state,
@@ -194,6 +220,15 @@ export default function SearchReducer(state = initialState, action) {
     return reduceYoutubePlaylistSearchStart(state, action);
   case Search.YOUTUBE_PLAYLIST_SEARCH_SUCCESS:
     return reduceYoutubePlaylistSearchSuccess(state, action);
+  case Search.YOUTUBE_LIVESTREAM_SEARCH_START:
+    return reduceYoutubeLiveStreamSearchStart(state, action);
+  case Search.YOUTUBE_LIVESTREAM_SEARCH_SUCCESS:
+    return reduceYoutubeLiveStreamSearchSuccess(state, action);
+  case Search.YOUTUBE_LIVESTREAM_SEARCH_ERROR:
+    return {
+      ...state,
+      liveStreamSearchResults: []
+    };
   case Search.SEARCH_DROPDOWN_DISPLAY_CHANGE:
     return reduceSearchDropdownDisplay(state, action);
   case Search.UPDATE_SEARCH_HISTORY:

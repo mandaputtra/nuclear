@@ -3,15 +3,20 @@
     "download": "Heruntergeladen",
     "download-toast-content": "{{artist}} - {{title}} wurde zu Downloads hinzugefügt.",
     "download-toast-title": "Album zu Downloads hinzugefügt",
-    "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Album zur Warteschlange hinzufügen"
+    "error-load": "Leider konnte dieses Album nicht geladen werden. Versuchen Sie es später erneut oder öffnen Sie ein neues Problem auf Github",
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Album zur Warteschlange hinzufügen",
+    "tracks": "Lieder:",
+    "year": "Jahr:"
   },
   "app": {
     "collection": "Sammlung",
-    "dashboard": "Dashboard",
+    "dashboard": "Startseite",
     "downloads": "Downloads",
     "equalizer": "Equalizer",
     "favorite-albums": "Lieblingsalben",
+    "favorite-artists": "Lieblingskünstler",
     "favorite-tracks": "Lieblingslieder",
     "library": "Lokale Bibliothek",
     "lyrics": "Liedtext",
@@ -35,9 +40,9 @@
     "best-new-albums": "Beste neue Alben",
     "best-new-tracks": "Beste neue Lieder",
     "genres": "Genres",
-    "lastfm-title": "Beste neue Lieder von LastFm.",
     "news": "Neuigkeiten",
     "playcounts": "Spielen Zählt",
+    "popular-track-title": "Beste neue Lieder von Deezer",
     "title": "Titel",
     "top": "Beliebte Lieder"
   },
@@ -55,6 +60,11 @@
     "empty-help": "Favorisierte Alben werden hier erscheinen!",
     "header": "Lieblingsalben"
   },
+  "favorite-artists": {
+    "empty": "Keine Lieblingskünstler",
+    "empty-help": "Versuche ein paar Künstler hinzuzufügen und sie werden hier auftauchen!",
+    "header": "Deine Lieblingskünstler"
+  },
   "favorites": {
     "artist": "Künstler",
     "empty": "Keine Favoriten hinzugefügt.",
@@ -66,7 +76,7 @@
     "about": "Über Nuclear Music Player",
     "header": "Desktop-Musikplayer für das Streaming aus freien Quellen",
     "released": "veröffentlicht unter AGPL-3.0",
-    "report": "Submit issues or new features",
+    "report": "Sende eine Fehlermeldung oder eine Idee für eine neue Funktion",
     "thanks": "Vielen Dank an unsere Mitwirkenden bei Github, Ihre Hilfe war entscheidend für die Entwicklung dieses Programms."
   },
   "input-dialog": {
@@ -85,7 +95,7 @@
     "title": "Titel"
   },
   "lyrics": {
-    "by-artist": "by {{artist}}",
+    "by-artist": "von {{artist}}",
     "empty": "Es spielt nichts.",
     "empty-help": "Füge etwas Musik in die Warteschlange ein, um den Liedtext hier anzuzeigen!",
     "not-found": "Es wurden keine Liedtexte für diesen Song gefunden."
@@ -94,7 +104,7 @@
     "autoradio": "Autoradio",
     "loop": "Loop",
     "mini-player": "Miniplayer",
-    "shuffle": "Shuffle"
+    "shuffle": "Zufallswiedergabe"
   },
   "player": {
     "next-button": " Nächster Lied-Taste",
@@ -102,17 +112,37 @@
     "previous-button": "Vorheriger Lied-Taste"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Ausgewählte Downloads hinzufügen",
+    "add-selected-tracks-to-favorites": "Auswahl zu Favoriten hinzufügen",
+    "add-selected-tracks-to-queue": "Auswahl zur Warteschlange hinzufügen",
+    "album": "Album",
     "artist": "Künstler",
     "delete": "Diese Wiedergabeliste löschen",
     "dialog-placeholder": "Wiedergabelistenname...",
+    "duration": "Länge",
     "empty": "Keine Wiedergabelisten.",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
-    "header": "Your playlists",
+    "error-empty-data": "keine Daten",
+    "error-invalid-data": "Ungültige Daten",
+    "error-open-file": "Datei kann nicht geöffnet werden",
+    "error-save-file": "Die Datei konnte nicht gespeichert werden",
+    "export-button": "Wiedergabeliste exportieren (JSON)",
+    "export-fail-title": "Wiedergabelisten-Export fehlgeschlagen",
+    "export-success-title": "Wiedergabeliste erfolgreich exportiert",
+    "header": "Deine Wiedergabelisten",
+    "import-button": "Aus Datei importieren (JSON)",
+    "import-fail-title": "Wiedergabeliste importiert",
+    "import-success-title": "Wiedergabeliste erfolgreich exportiert",
+    "play-selected-tracks-now": "Jetzt ausgewählte Lieder abspielen",
+    "playlist-created": "{{name}} erstellt",
+    "playlist-exported": "{{name}} wurde in lokaler Datei gespeichert",
     "queue": "Playlist zur Warteschlange hinzufügen",
     "rename": "Diese Wiedergabeliste umbenennen",
     "songs": "{{total}} Lied",
     "songs_plural": "{{total}} Lieder",
-    "title": "Titel"
+    "title": "Titel",
+    "tracks-selected-plural": "Titel ausgewählt",
+    "tracks-selected-singular": "Titel ausgewählt"
   },
   "plugins": {
     "add-a-plugin": "Plugin hinzufügen",
@@ -150,7 +180,7 @@
     "album_plural": "Alben",
     "artist": "Künstler",
     "artist_plural": "Künstler",
-    "clear-history": "Clear history",
+    "clear-history": "Verlauf löschen",
     "empty": "Nichts gefunden.",
     "last-searches": "Last searches",
     "placeholder": "Suchen...",
@@ -160,6 +190,9 @@
     "track": "Lied",
     "track_plural": "Lieder",
     "you-can-search-for": "You can search for:"
+  },
+  "seekbar": {
+    "segment-popup": "Musikvideoteile ohne Musik"
   },
   "settings": {
     "api-port": "Port wird von der API verwendet",
@@ -175,18 +208,18 @@
     "disable-gpu": "Hardware-Rendering deaktivieren (könnte Probleme mit ziehenden Elementen und blinkenden Bildschirmen beheben)",
     "display": "Anzeige",
     "downloads": "Downloads",
-    "downloads-count": "Max simultaneous downloads",
+    "downloads-count": "Maximale gleichzeitige Downloads",
     "downloads-dir": "Downloadordner",
     "downloads-dir-button": "Ordner festlegen...",
     "enable-api": "Aktiviere die API",
     "fmfav-btn": "Import",
-    "fmfav-msg": "Import your Last.fm Favorites",
+    "fmfav-msg": "Importiere deine Last.fm Favoriten",
     "frameless-window": "Rahmenloses Fenster (erfordert Neustart)",
     "github-connect": "Mit Github einloggen",
     "github-description": "Melden Sie sich über Github an, um Ihre Playlists online erstellen und freigeben zu können (kommende Funktion).",
     "github-title": "Github",
     "http": "HTTP API",
-    "invidious-url": "Invidious instance url",
+    "invidious-url": "Invidious Instanz Url",
     "language": "Sprache",
     "language-placeholder": "Wähle eine Sprache",
     "lastfm-connect": "Verbinden mit Last.fm",
@@ -196,18 +229,28 @@
     "login": "Log-in",
     "logout": "Log-out",
     "loop-after-queue-end": "Loop nach dem Ende der Warteschlange",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Autorisieren",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Download control",
-    "mini-player": "Use mini player style",
+    "mini-player": "Mini-Player-Stil verwenden",
     "notification-timeout": "Benachrichtigungs-Timeout",
     "notlogged": "Nicht eingeloggt",
-    "playback": "Playback",
+    "playback": "Wiedergabe",
     "program-settings": "Programmeinstellungen",
     "seek-iteration": "Zeit in Sekunden zum Vor- oder Zurückspulen bei Betätigung der Pfeiltasten",
     "shuffle-queue": "Shuffle Lieder",
     "shuffle-when-going-back": "Shuffle von vorherigen Liedern",
     "shuffle-when-going-back-description": "Spiele zufällige Lieder wenn Shuffle aktiviert und der Button 'vorherige Lieder' ausgewählt ist",
     "social": "Sozial",
-    "track-duration": "Display track duration over the seekbar",
+    "streaming": "Streamen",
+    "track-duration": "Laufzeit über der Suchleiste anzeigen",
     "user": "Benutzer:",
     "youtube": "Youtube",
     "yt-api-key": "Youtube API Key"
@@ -221,6 +264,6 @@
     "title": "Titel"
   },
   "visualizer": {
-    "exit-fullscreen": "Press ESC to exit full screen"
+    "exit-fullscreen": "Drücken Sie ESC, um den Vollbildmodus zu beenden"
   }
 }

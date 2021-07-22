@@ -51,7 +51,22 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                 unloader={<img src={String(artPlaceholder)} />}
               />
               <div className={styles.album_details}>
-                <div className={styles.album_title}>{album.title}</div>
+                <div className={styles.album_title}>
+                  <div className={styles.album_text}>{album.title}</div>
+                  <a
+                    href='#'
+                    className={styles.album_favorites_button_wrap}
+                    data-testid='add-remove-favorite'
+                    onClick={
+                      isFavorite ? removeFavoriteAlbum : addFavoriteAlbum
+                    }
+                  >
+                    <Icon
+                      name={isFavorite ? 'star' : 'star outline'}
+                      size='big'
+                    />
+                  </a>
+                </div>
                 <div className={styles.album_artist}>
                   by{' '}
                   <a
@@ -64,19 +79,19 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                 {
                   !_.isEmpty(album.genres) &&
                   <div className={styles.album_genre}>
-                    <label>Genre:</label>
+                    <label>{t('genre')}</label>
                     {album.genres.join(', ')}
                   </div>
                 }
                 {
                   album.year &&
                   <div className={styles.album_year}>
-                    <label>Year:</label>
+                    <label>{t('year')}</label>
                     {album.year}
                   </div>
                 }
                 <div className={styles.album_tracks}>
-                  <label>Tracks:</label>
+                  <label>{t('tracks')}</label>
                   {album.tracklist.length}
                 </div>
                 <div className={styles.album_buttons}>
@@ -85,7 +100,7 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                     href='#'
                     className={styles.play_button}
                   >
-                    <Icon name='play' /> Play
+                    <Icon name='play' /> {t('play')}
                   </a>
                   <ContextPopup
                     trigger={
@@ -116,21 +131,6 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                   </ContextPopup>
                 </div>
               </div>
-              <a
-                href='#'
-                className={styles.album_favorites_button_wrap}
-                data-testid='add-remove-favorite'
-                onClick={
-                  isFavorite
-                    ? removeFavoriteAlbum
-                    : addFavoriteAlbum
-                }
-              >
-                <Icon
-                  name={isFavorite ? 'star' : 'star outline'}
-                  size='big'
-                />
-              </a>
             </div>
             <table className={styles.album_tracklist}>
               <thead>
@@ -138,7 +138,7 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                   <th className={cx(styles.center, styles.position)}>
                     <Icon name='hashtag' />
                   </th>
-                  <th className={styles.left}>Song</th>
+                  <th className={styles.left}>{t('tracks')}</th>
                   <th className={cx(styles.center, styles.duration)}>
                     <Icon name='clock outline' />
                   </th>
@@ -149,7 +149,6 @@ export const AlbumView: React.FC<AlbumViewProps> = ({
                   return (!track.type || track.type === 'track') ? <TrackRow
                     key={'album-track-row-' + index}
                     track={track}
-                    index={'album-track-' + index}
                     displayTrackNumber
                     displayDuration
                   /> : <TrackRowHeading title={track.title} key={'album-track-heading-' + index} />;

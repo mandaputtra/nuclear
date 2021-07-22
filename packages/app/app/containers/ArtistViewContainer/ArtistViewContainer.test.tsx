@@ -62,7 +62,7 @@ describe('Artist view container', () => {
     ]);
   });
 
-  it('tracks without thumbnails should have null', async () => {
+  it('tracks without thumbnails should have undefined', async () => {
     const initialState = buildStoreState()
       .withArtistDetails()
       .withPlugins()
@@ -88,7 +88,7 @@ describe('Artist view container', () => {
       expect.objectContaining({
         artist: 'test artist',
         name: 'test artist top track 1',
-        thumbnail: null
+        thumbnail: undefined
       })
     ]);
   });
@@ -139,17 +139,15 @@ describe('Artist view container', () => {
     state = store.getState();
     expect(state.favorites.tracks).toEqual([
       expect.objectContaining({
-        artist: expect.objectContaining({
-          name: 'test artist'
-        }),
-        title: 'test artist top track 1'
+        artist: 'test artist',
+        name: 'test artist top track 1'
       })
     ]);
   });
 
   it('should add all top to queue tracks after clicking add all', async () => {
     const { component, store } = mountComponent();
-    await waitFor(() => component.getByText(/add all/i).click());
+    await waitFor(() => component.getByText(/add-all/i).click());
 
     const state = store.getState();
     expect(state?.queue?.queueItems).toEqual([
@@ -166,6 +164,41 @@ describe('Artist view container', () => {
         name: 'test artist top track 3'
       })
     ]);
+  });
+
+  it('should add artist to favorites after clicking the heart', async () => {
+    const { component, store } = mountComponent();
+    let state = store.getState();
+    expect(state.favorites.artists).toEqual([]);
+
+    await waitFor(() => component.getByTestId(/add-remove-favorite/i).click());
+    state = store.getState();
+
+    expect(state.favorites.artists).toEqual([
+      expect.objectContaining({
+        id: 'test-artist-id',
+        name: 'test artist'
+      })
+    ]);
+  });
+
+  it('should remove artist from favorites after clicking the star if already in favorites', async () => {
+    const { component, store } = mountComponent();
+    let state = store.getState();
+    expect(state.favorites.artists).toEqual([]);
+
+    await waitFor(() => component.getByTestId(/add-remove-favorite/i).click());
+    state = store.getState();
+    expect(state.favorites.artists).toEqual([
+      expect.objectContaining({
+        id: 'test-artist-id',
+        name: 'test artist'
+      })
+    ]);
+
+    await waitFor(() => component.getByTestId(/add-remove-favorite/i).click());
+    state = store.getState();
+    expect(state.favorites.artists).toEqual([]);
   });
 
   const mountComponent = (initialStore?: AnyProps) => {

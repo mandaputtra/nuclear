@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} blev tilføjet til downloads.",
     "download-toast-title": "Album tilføjet til downloads",
     "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Tilføj album til kø"
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Tilføj album til kø",
+    "tracks": "Tracks:",
+    "year": "Year:"
   },
   "app": {
     "collection": "Samling",
@@ -12,6 +16,7 @@
     "downloads": "Downloads",
     "equalizer": "Equalizer",
     "favorite-albums": "Favoritalbums",
+    "favorite-artists": "Favorite Artists",
     "favorite-tracks": "Favoritsange",
     "library": "Lokalt bibliotek",
     "lyrics": "Sangtekster",
@@ -35,9 +40,9 @@
     "best-new-albums": "Bedste nylige albums",
     "best-new-tracks": "Bedste nylige sange",
     "genres": "Genrer",
-    "lastfm-title": "Bedste sange fra LastFm.",
     "news": "Nyheder",
     "playcounts": "Antal afspilninger",
+    "popular-track-title": "Bedste sange fra Deezer",
     "title": "Titel",
     "top": "Populære sange"
   },
@@ -54,6 +59,11 @@
     "empty": "Ingen favoritalbums",
     "empty-help": "Prøv at tilføje albums til favoritter for at vise dem her!",
     "header": "Dine favoritalbums"
+  },
+  "favorite-artists": {
+    "empty": "No favorite artists",
+    "empty-help": "Try adding some artists to favorites and they will appear here!",
+    "header": "Your favorite artists"
   },
   "favorites": {
     "artist": "Artist",
@@ -102,15 +112,37 @@
     "previous-button": "Forrige sang"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Add selected to downloads",
+    "add-selected-tracks-to-favorites": "Add selected to favorites",
+    "add-selected-tracks-to-queue": "Add selected to queue",
+    "album": "Album",
     "artist": "Artist",
     "delete": "Slet denne afspilningsliste",
     "dialog-placeholder": "Afspilningslistens navn...",
+    "duration": "Length",
     "empty": "Ingen afspilningsliste.",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
+    "error-empty-data": "Empty data",
+    "error-invalid-data": "Invalid data",
+    "error-open-file": "Can not open file",
+    "error-save-file": "Can not save file",
+    "export-button": "Export playlist (JSON)",
+    "export-fail-title": "Playlist export fail",
+    "export-success-title": "Playlist exported successfully",
     "header": "Your playlists",
+    "import-button": "Import from file (JSON)",
+    "import-fail-title": "Playlist import fail",
+    "import-success-title": "Playlist imported successfully",
+    "play-selected-tracks-now": "Play selected now",
+    "playlist-created": "{{name}} created",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Tilføj afspilningsliste til kø",
     "rename": "Omdøb denne afspilningsliste",
-    "title": "Titel"
+    "songs": "{{total}} song",
+    "songs_plural": "{{total}} songs",
+    "title": "Titel",
+    "tracks-selected-plural": "tracks selected",
+    "tracks-selected-singular": "track selected"
   },
   "plugins": {
     "add-a-plugin": "tilføj udvidelse",
@@ -144,12 +176,23 @@
     "title": "Titel:"
   },
   "search": {
+    "album": "Album",
+    "album_plural": "Albums",
+    "artist": "Artist",
+    "artist_plural": "Artists",
     "clear-history": "Clear history",
     "empty": "Intet fundet.",
     "last-searches": "Last searches",
     "placeholder": "Søg...",
+    "playlist": "Playlist",
+    "playlist_plural": "Afspilningslister",
     "queue-add": "Tilføj alle sange til kø",
+    "track": "Track",
+    "track_plural": "Tracks",
     "you-can-search-for": "You can search for:"
+  },
+  "seekbar": {
+    "segment-popup": "Non-music"
   },
   "settings": {
     "api-port": "Port benyttet af api'en",
@@ -186,6 +229,15 @@
     "login": "Log ind",
     "logout": "Log ud",
     "loop-after-queue-end": "Loop efter afspilning af den sidste sang i køen",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Download control",
     "mini-player": "Brug mini afspiller stil",
     "notification-timeout": "Notifikation timeout",
@@ -197,6 +249,7 @@
     "shuffle-when-going-back": "Shuffle ved tidligere nummer",
     "shuffle-when-going-back-description": "Afspil et tilfældigt nummer når shuffle er aktivt og det tidligere nummer er valgt",
     "social": "Social",
+    "streaming": "Streaming",
     "track-duration": "Vis nummerets længde over afspilningsbjælken",
     "user": "Bruger:",
     "youtube": "Youtube",

@@ -1,5 +1,6 @@
 .header_container{
-  font-size: 30px;
-  line-height: 30px;
-  margin: 12px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
 }

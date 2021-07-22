@@ -11,7 +11,21 @@ exports[`Playlist container should display all playlists 1`] = `
       <div
         class="header_container"
       >
-        Your playlists
+        <div
+          class="header_container"
+        >
+          Your playlists
+        </div>
+        <button
+          class="ui basic button nuclear button"
+          data-testid="import-from-file"
+        >
+          <i
+            aria-hidden="true"
+            class="file text icon"
+          />
+          Import from file (JSON)
+        </button>
       </div>
       <div
         class="ui segment playlists_segment"
@@ -22,7 +36,9 @@ exports[`Playlist container should display all playlists 1`] = `
           <div
             class="playlist_container"
           >
-            <div>
+            <div
+              class="playlist_thumbnail_container"
+            >
               <img
                 class="playlist_thumbnail"
                 src="test thumbnail"
@@ -37,7 +53,35 @@ exports[`Playlist container should display all playlists 1`] = `
                 test playlist
               </h4>
               <p>
-                2 song
+                2 songs
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="playlist_outside_container"
+        >
+          <div
+            class="playlist_container"
+          >
+            <div
+              class="playlist_thumbnail_container"
+            >
+              <img
+                class="playlist_thumbnail"
+                src="test thumbnail"
+              />
+            </div>
+            <div
+              class="playlist_info"
+            >
+              <h4
+                class="playlist_title"
+              >
+                test playlist 2
+              </h4>
+              <p>
+                2 songs
               </p>
             </div>
           </div>
@@ -58,7 +102,19 @@ exports[`Playlist container should display empty playlists view 1`] = `
     >
       <div
         class="header_container"
-      />
+      >
+        <span />
+        <button
+          class="ui basic button nuclear button"
+          data-testid="import-from-file"
+        >
+          <i
+            aria-hidden="true"
+            class="file text icon"
+          />
+          Import from file (JSON)
+        </button>
+      </div>
       <div
         class="empty_state"
       >
@@ -74,7 +130,7 @@ exports[`Playlist container should display empty playlists view 1`] = `
           No playlists.
         </h2>
         <div>
-          Try create some playlists or import by url and they will appear here!
+          Try to create some playlists or import by url and they will appear here!
         </div>
       </div>
     </div>

@@ -1,14 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {
-  withHandlers,
-  withState,
-  compose
-} from 'recompose';
 import { Button } from 'semantic-ui-react';
 
-import { getThumbnail } from '../../utils';
+import { getThumbnail } from '../..';
 import ContextPopup from '../ContextPopup';
 import TrackRow from '../TrackRow';
 import artPlaceholder from '../../../resources/media/art_placeholder.png';
@@ -17,8 +12,6 @@ import styles from './styles.scss';
 const AlbumPreview = ({
   album,
   trackButtons,
-  target,
-  handleListClick,
 
   handleAddToQueue,
   handlePlayAll
@@ -49,7 +42,6 @@ const AlbumPreview = ({
       </div>
       <div
         className={styles.track_list}
-        onClick={handleListClick}
       >
         <table>
           <tbody>
@@ -71,7 +63,6 @@ const AlbumPreview = ({
                   thumb={thumb}
                   title={track.name}
                   artist={_.get(album, 'artist.name')}
-                  target={target}
                 >
                   <TrackButtons
                     track={track}
@@ -110,11 +101,4 @@ AlbumPreview.propTypes = {
   trackButtons: PropTypes.object
 };
 
-export default compose(
-  withState(
-    'target', 'setTarget', { x: 0, y: 0 }
-  ),
-  withHandlers({
-    handleListClick: ({ setTarget }) => e => setTarget({ x: e.clientX, y: e.clientY })
-  })
-)(AlbumPreview);
+export default AlbumPreview;

@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} προστέθηκε στην λίστα μεταφορτώσεων.",
     "download-toast-title": "Το άλμπουμ προστέθηκε στην λίστα μεταφορτώσεων",
     "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Προσθήκη του άλμπουμ στην λίστα αναπαραγωγής"
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Προσθήκη του άλμπουμ στην λίστα αναπαραγωγής",
+    "tracks": "Tracks:",
+    "year": "Year:"
   },
   "app": {
     "collection": "Συλλογή",
@@ -12,6 +16,7 @@
     "downloads": "Μεταφορτώσεις",
     "equalizer": "Ισοσταθμιστής",
     "favorite-albums": "Αγαπημένα άλμπουμ",
+    "favorite-artists": "Favorite Artists",
     "favorite-tracks": "Αγαπημένα κομμάτια",
     "library": "Τοπική βιβλιοθήκη",
     "lyrics": "Στίχοι",
@@ -35,9 +40,9 @@
     "best-new-albums": "Τα καλύτερα άλμπουμ",
     "best-new-tracks": "Τα καλύτερα κομμάτια",
     "genres": "Είδη",
-    "lastfm-title": "Τα καλύτερα του LastFm.",
     "news": "Νέα",
     "playcounts": "Αριθμός αναπαραγωγών",
+    "popular-track-title": "Τα καλύτερα του Deezer",
     "title": "Τίτλος",
     "top": "Τα τοπ τραγούδια"
   },
@@ -54,6 +59,11 @@
     "empty": "Κανένα αγαπημένο άλμπουμ.",
     "empty-help": "Προσθέστε άλμπουμ στην λίστα αγαπημένων και θα εμφανίζονται εδώ !",
     "header": "Τα αγαπημένα σας άλμπουμ"
+  },
+  "favorite-artists": {
+    "empty": "No favorite artists",
+    "empty-help": "Try adding some artists to favorites and they will appear here!",
+    "header": "Your favorite artists"
   },
   "favorites": {
     "artist": "Καλλιτέχνης",
@@ -102,15 +112,37 @@
     "previous-button": "Προηγούμενο κομμάτι"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Add selected to downloads",
+    "add-selected-tracks-to-favorites": "Add selected to favorites",
+    "add-selected-tracks-to-queue": "Add selected to queue",
+    "album": "Album",
     "artist": "Καλλιτέχνης",
     "delete": "Διαγραφή λίστας",
     "dialog-placeholder": "Όνομα λίστας...",
+    "duration": "Length",
     "empty": "Καμία λίστα.",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
+    "error-empty-data": "Empty data",
+    "error-invalid-data": "Invalid data",
+    "error-open-file": "Can not open file",
+    "error-save-file": "Can not save file",
+    "export-button": "Export playlist (JSON)",
+    "export-fail-title": "Playlist export fail",
+    "export-success-title": "Playlist exported successfully",
     "header": "Your playlists",
+    "import-button": "Import from file (JSON)",
+    "import-fail-title": "Playlist import fail",
+    "import-success-title": "Playlist imported successfully",
+    "play-selected-tracks-now": "Play selected now",
+    "playlist-created": "{{name}} created",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Προσθέστε την λίστα στην λίστα αναπαραγωγής",
     "rename": "Μετονομασία λίστας",
-    "title": "Τίτλος"
+    "songs": "{{total}} song",
+    "songs_plural": "{{total}} songs",
+    "title": "Τίτλος",
+    "tracks-selected-plural": "tracks selected",
+    "tracks-selected-singular": "track selected"
   },
   "plugins": {
     "add-a-plugin": "Προσθήκη πρόσθετων",
@@ -144,16 +176,27 @@
     "title": "Τίτλος :"
   },
   "search": {
+    "album": "Album",
+    "album_plural": "Albums",
+    "artist": "Artist",
+    "artist_plural": "Artists",
     "clear-history": "Clear history",
     "empty": "Κανένα αποτέλεσμα.",
     "last-searches": "Last searches",
     "placeholder": "Αναζήτηση...",
+    "playlist": "Playlist",
+    "playlist_plural": "Playlists",
     "queue-add": "Προσθήκη όλων στην λίστα αναπαραγωγής",
+    "track": "Track",
+    "track_plural": "Tracks",
     "you-can-search-for": "You can search for:"
+  },
+  "seekbar": {
+    "segment-popup": "Non-music"
   },
   "settings": {
     "api-port": "Θύρα που χρησιμοποιεί το ΑΡΙ",
-    "api-url": "Διεύθυνση ΑΡΙ",
+    "api-url": "",
     "autoradio": "Ραδιόφωνο",
     "autoradio-craziness": "Επίπεδο διαφοροποίησης ραδιοφώνου",
     "autoradio-craziness-description": "Αυξάνοντας το επίπεδο διαφοροποίησης, μειώνετε την ομοιότητα των τραγουδιών με αυτά της ουράς αναπαραγωγής",
@@ -186,6 +229,15 @@
     "login": "Σύνδεση",
     "logout": "Αποσύνδεση",
     "loop-after-queue-end": "Αναπαραγωγή σε επανάληψη μετα το τελευταίο τραγούδι της λίστας",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Έλεγχος μεταφορτώσεων",
     "mini-player": "Χρησιμοποιείστε τον μινι Player",
     "notification-timeout": "Χρόνος παραμονής των ειδοποιήσεων",
@@ -197,6 +249,7 @@
     "shuffle-when-going-back": "Τυχαία αναπαραγωγή όταν πατάτε \"προηγούμενο\"",
     "shuffle-when-going-back-description": "Αναπαραγωγή ενός τυχαίου τραγουδιου που περάσατε, όταν το κουμπί \"προηγούμενο\" πατιέται",
     "social": "Κοινωνικά μέσα",
+    "streaming": "Streaming",
     "track-duration": "Εμφανιση συνολικού χρόνου τραγουδιου στην μπάρα αναπαραγωγής",
     "user": "Χρήστης :",
     "youtube": "YouTube",

@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import { Icon, SemanticICONS, Popup } from 'semantic-ui-react';
+import { Icon, SemanticICONS } from 'semantic-ui-react';
 
 import styles from './styles.scss';
-import common from '../../../common.scss';
+import Tooltip from '../../Tooltip';
 
 export type PlayOptionControlProps = {
   name: string;
@@ -18,11 +18,9 @@ const PlayOptionControl: React.FC<PlayOptionControlProps> = ({
   enabled = true,
   onToggle
 }) => (
-  <Popup
-    className={cx(common.nuclear, styles.play_option_popup)}
+  <Tooltip
     content={name}
-    inverted
-    basic
+    position='top center'
     trigger={
       <Icon
         className={cx(
@@ -32,7 +30,8 @@ const PlayOptionControl: React.FC<PlayOptionControlProps> = ({
         name={icon}
         onClick={onToggle}
         size='large'
-      />}
+      />
+    }
   />);
 
 export type PlayOptionsProps = {

@@ -1,3 +1,4 @@
+import logger from 'electron-timber';
 import _ from 'lodash';
 import getArtistTitle from 'get-artist-title';
 import ytdl from 'ytdl-core';
@@ -44,7 +45,7 @@ function analyseUrlType(url) {
   return analysisResult;
 }
 
-function getTrackFromTitle(title) {
+function getTrackFromTitle(title): Promise<Record<string, any>> {
   const result = getArtistTitle(title);
   if (result) {
     return lastfm.searchTracks(result[0] + ' ' + result[1], 1)
@@ -79,10 +80,17 @@ function handleYoutubePlaylist(url) {
 function handleYoutubeVideo(url) {
   return ytdl.getInfo(url)
     .then(info => {
-      return getTrackFromTitle(info.videoDetails.title)
-        .then(track => {
-          return [track];
-        });
+      if (info.videoDetails) {
+        const videoDetails = info.videoDetails;
+
+        return [{
+          streams: [{source: 'youtube', id: videoDetails.videoId}],
+          name: videoDetails.title,
+          thumbnail: videoDetails.thumbnails[0].url,
+          artist: {name: videoDetails.ownerChannelName}
+        }];
+      } 
+      return [];
     })
     .catch(function () {
       return Promise.resolve([]);
@@ -102,6 +110,28 @@ export function urlSearch(url) {
   }
 }
 
+export async function liveStreamSearch(query: string) {
+  if (isValidURL(query)) {
+    return [];
+  }
+
+  const videoFilter = (await ytsr.getFilters(query)).get('Type').get('Video');
+  const liveFilter = (await ytsr.getFilters(videoFilter.url)).get('Features').get('Live');
+  const options = {
+    limit: 10
+  };
+  const searchResults = await ytsr(liveFilter.url, options);
+
+  return searchResults.items.map((video: ytsr.Video) => {
+    return {
+      streams: [{source: 'youtube', id: video.id}],
+      name: video.title,
+      thumbnail: video.bestThumbnail.url,
+      artist: {name: video.author.name}
+    };
+  });
+}
+
 export async function trackSearch(query: StreamQuery, omitStreamId?: string, sourceName?: string) {
   const terms = query.artist + ' ' + query.track;
   return trackSearchByString(terms, omitStreamId, sourceName);
@@ -115,19 +145,27 @@ export async function trackSearchByString(query: string, omitStreamId?: string, 
     results.items as ytsr.Video[],
     item => (!omitStreamId || item.id !== omitStreamId)
   ) as ytsr.Video;
-  const topTrackInfo = await ytdl.getInfo(topTrack.url);
-  const formatInfo = ytdl.chooseFormat(topTrackInfo.formats, { quality: 'highestaudio' });
-  const segments = await SponsorBlock.getSegments(topTrack.id);
-  return {
-    source: sourceName,
-    id: topTrack.id,
-    stream: formatInfo.url,
-    duration: parseInt(topTrackInfo.videoDetails.lengthSeconds),
-    title: topTrackInfo.videoDetails.title,
-    thumbnail: topTrack.bestThumbnail.url,
-    format: formatInfo.container,
-    skipSegments: segments
-  };
+
+  try {
+    const topTrackInfo = await ytdl.getInfo(topTrack.url);
+    const formatInfo = ytdl.chooseFormat(topTrackInfo.formats, { quality: 'highestaudio' });
+    const segments = await SponsorBlock.getSegments(topTrack.id);
+  
+    return {
+      source: sourceName,
+      id: topTrack.id,
+      stream: formatInfo.url,
+      duration: parseInt(topTrackInfo.videoDetails.lengthSeconds),
+      title: topTrackInfo.videoDetails.title,
+      thumbnail: topTrack.bestThumbnail.url,
+      format: formatInfo.container,
+      skipSegments: segments
+    };
+  } catch (e){
+    logger.error('youtube track search error');
+    logger.error(e);
+    throw new Error('Warning: topTrack.url is undefined, removing song');    
+  }
 }
 
 export const getStreamForId = async (id: string) => {

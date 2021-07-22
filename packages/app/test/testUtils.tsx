@@ -5,13 +5,19 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { createMemoryHistory } from 'history';
 import thunk from 'redux-thunk';
+import ReduxPromise from 'redux-promise';
 import { Router } from 'react-router';
 import en from '@nuclear/i18n/src/locales/en.json';
 
 import rootReducer from '../app/reducers';
 import syncStore from '../app/store/enhancers/syncStorage';
 import { render } from '@testing-library/react';
+
 import MainContentContainer from '../app/containers/MainContentContainer';
+import HelpModalContainer from '../app/containers/HelpModalContainer';
+import Navbar from '../app/components/Navbar';
+import NavButtons from '../app/components/NavButtons';
+
 
 export type AnyProps = {
   [k: string]: any;
@@ -26,7 +32,7 @@ export const configureMockStore = (initialState?: AnyProps) => createStore(
   rootReducer,
   initialState,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(ReduxPromise, thunk),
     syncStore(['downloads'])
   )
 );
@@ -66,27 +72,56 @@ export const setupI18Next = () => {
   return i18n;
 };
 
+export const mountComponent = (
+  willMountComponent: React.ReactElement, 
+  initialHistoryEntries: string[],
+  initialStore?: AnyProps, 
+  defaultInitialStore?: AnyProps) => {
+  const initialState = initialStore || defaultInitialStore;
+
+  const history = createMemoryHistory({
+    initialEntries: initialHistoryEntries
+  });
+  const store = configureMockStore(initialState);
+  const component = render(
+    <TestRouterProvider
+      history={history}
+    >
+      <TestStoreProvider
+        store={store}
+      >
+        {willMountComponent}
+      </TestStoreProvider>
+    </TestRouterProvider>
+  );
+  return { component, history, store };
+};
+
 export const mountedComponentFactory = (
   initialHistoryEntries: string[],
   defaultInitialStore?: AnyProps
 ) =>
   (initialStore?: AnyProps) => {
-    const initialState = initialStore || defaultInitialStore;
-
-    const history = createMemoryHistory({
-      initialEntries: initialHistoryEntries
-    });
-    const store = configureMockStore(initialState);
-    const component = render(
-      <TestRouterProvider
-        history={history}
-      >
-        <TestStoreProvider
-          store={store}
-        >
-          <MainContentContainer />
-        </TestStoreProvider>
-      </TestRouterProvider>
+    return mountComponent(
+      <MainContentContainer />, 
+      initialHistoryEntries, 
+      initialStore, 
+      defaultInitialStore
     );
-    return { component, history, store };
+  };
+
+export const mountedNavbarFactory= (
+  initialHistoryEntries: string[],
+  defaultInitialStore?: AnyProps
+) =>
+  (initialStore?: AnyProps) => {
+    return mountComponent(
+      <Navbar>
+        <NavButtons />
+        <HelpModalContainer />
+      </Navbar>, 
+      initialHistoryEntries, 
+      initialStore, 
+      defaultInitialStore
+    );
   };

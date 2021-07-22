@@ -17,7 +17,8 @@ type SettingCategory = 'audio' |
   'streaming' |
   'downloads' |
   'developer' |
-  'visualizer';
+  'visualizer' |
+  'social';
 
 type SettingOption = {
   key: string;
@@ -25,7 +26,7 @@ type SettingOption = {
   value: string;
 }
 
-type Setting = {
+export type Setting = {
   name: string;
   category: SettingCategory;
   description?: string;
@@ -202,7 +203,10 @@ export const settingsConfig: Array<Setting> = [
       { key: 'gr', text: 'Greek', value: 'gr' },
       { key: 'hr', text: 'Hrvatski', value: 'hr' },
       { key: 'is', text: 'Íslenska', value: 'is' },
-      { key: 'fi', text: 'Suomi', value: 'fi' }
+      { key: 'fi', text: 'Suomi', value: 'fi' },
+      { key: 'sq', text: 'Albanian', value: 'sq' },
+      { key: 'hi_IN', text: 'Hindi', value: 'hi_IN' },
+      { key: 'vi', text: 'Vietnamese', value: 'vi' }
     ],
     default: undefined
   }, {
@@ -239,6 +243,38 @@ export const settingsConfig: Array<Setting> = [
     type: SettingType.STRING,
     prettyName: 'visualizer-preset',
     default: '$$$ Royal - Mashup (431)',
+    hide: true
+  },
+  {
+    name: 'mastodonInstance',
+    prettyName: 'mastodon-instance',
+    category: 'social',
+    type: SettingType.STRING,
+    default: 'https://mastodon.social',
+    hide: true
+  },
+  {
+    name: 'mastodonAuthorizationCode',
+    prettyName: 'mastodon-authorization-code',
+    category: 'social',
+    type: SettingType.STRING,
+    default: '',
+    hide: true
+  },
+  {
+    name: 'mastodonAccessToken',
+    prettyName: 'mastodon-access-token',
+    category: 'social',
+    type: SettingType.STRING,
+    default: '',
+    hide: true
+  },
+  {
+    name: 'mastodonPostFormat',
+    prettyName: 'mastodon-post-format',
+    category: 'social',
+    type: SettingType.STRING,
+    default: '#nowplaying {{artist}} - {{title}} #nuclear https://nuclear.js.org',
     hide: true
   }
 ];

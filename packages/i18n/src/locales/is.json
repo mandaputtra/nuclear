@@ -4,7 +4,11 @@
     "download-toast-content": "{{artist}} - {{title}} hefur verið bætt í niðurhöl.",
     "download-toast-title": "Albúmi bætt í niðurhöl",
     "error-load": "Sorry, this album could not be loaded. Try again later or open a new issue on Github",
-    "queue": "Setja albúm i biðröðina"
+    "genre": "Genre:",
+    "play": "Play",
+    "queue": "Setja albúm i biðröðina",
+    "tracks": "Tracks:",
+    "year": "Year:"
   },
   "app": {
     "collection": "Lagasöfn",
@@ -12,6 +16,7 @@
     "downloads": "Niðurhalað",
     "equalizer": "Tónjafnari",
     "favorite-albums": "Uppáhalds albúm",
+    "favorite-artists": "Favorite Artists",
     "favorite-tracks": "Uppáhalds lög",
     "library": "Þitt lagasafn",
     "lyrics": "Lagatexti",
@@ -35,9 +40,9 @@
     "best-new-albums": "Nýjustu og vinsælustu albúmin",
     "best-new-tracks": "Nýjustu og vinsælustu lögin",
     "genres": "Lagategund",
-    "lastfm-title": "Vinsælustu lögin frá LastFm.",
     "news": "Fréttir",
     "playcounts": "Spilateljari",
+    "popular-track-title": "Vinsælustu lögin frá Deezer",
     "title": "Titill",
     "top": "Vinsælast"
   },
@@ -54,6 +59,11 @@
     "empty": "Engin uppáhalds albúm",
     "empty-help": "Prófaðu að bæta við nokkrum albúmum í uppáhalds og þeir munu birtast hér!",
     "header": "Þín uppáhalds albúm"
+  },
+  "favorite-artists": {
+    "empty": "No favorite artists",
+    "empty-help": "Try adding some artists to favorites and they will appear here!",
+    "header": "Your favorite artists"
   },
   "favorites": {
     "artist": "Tónlistamaður",
@@ -102,17 +112,37 @@
     "previous-button": "Síðasta lag"
   },
   "playlists": {
+    "add-selected-tracks-to-downloads": "Add selected to downloads",
+    "add-selected-tracks-to-favorites": "Add selected to favorites",
+    "add-selected-tracks-to-queue": "Add selected to queue",
+    "album": "Album",
     "artist": "Tónlistamaður",
     "delete": "Fjarlægja þennan lagalista",
     "dialog-placeholder": "Nafn lagalista...",
+    "duration": "Length",
     "empty": "Engir lagalistar.",
     "empty-help": "Try create some playlists or import by url and they will appear here!",
+    "error-empty-data": "Empty data",
+    "error-invalid-data": "Invalid data",
+    "error-open-file": "Can not open file",
+    "error-save-file": "Can not save file",
+    "export-button": "Export playlist (JSON)",
+    "export-fail-title": "Playlist export fail",
+    "export-success-title": "Playlist exported successfully",
     "header": "Your playlists",
+    "import-button": "Import from file (JSON)",
+    "import-fail-title": "Playlist import fail",
+    "import-success-title": "Playlist imported successfully",
+    "play-selected-tracks-now": "Play selected now",
+    "playlist-created": "{{name}} created",
+    "playlist-exported": "{{name}} saved to local file",
     "queue": "Bæta lagalista í biðröðina",
     "rename": "Endurnefna lagalista",
     "songs": "{{total}} lag",
     "songs_plural": "{{total}} lög",
-    "title": "Titill"
+    "title": "Titill",
+    "tracks-selected-plural": "tracks selected",
+    "tracks-selected-singular": "track selected"
   },
   "plugins": {
     "add-a-plugin": "Bæta við viðbót",
@@ -161,6 +191,9 @@
     "track_plural": "Lög",
     "you-can-search-for": "You can search for:"
   },
+  "seekbar": {
+    "segment-popup": "Non-music"
+  },
   "settings": {
     "api-port": "Port notað af api",
     "api-url": "",
@@ -196,6 +229,15 @@
     "login": "Skrá inn",
     "logout": "Skrá út",
     "loop-after-queue-end": "Lykkja eftir að spila síðsta hlut í lykkju",
+    "mastodon-authorization-token-label": "Authorization token",
+    "mastodon-authorize": "Authorize",
+    "mastodon-authorized": "Nuclear is authorized to post on ",
+    "mastodon-awaiting-authorization": "Nuclear is registered on {{instanceUrl}}. Awaiting authorization.",
+    "mastodon-description": "",
+    "mastodon-instance-label": "Mastodon instance URL",
+    "mastodon-post-format-description": "Nuclear will post a status on Mastodon after each track completes playing. The above string will be the template for each post, with {{artist}} and {{title}} replaced with the artist and title of the track.",
+    "mastodon-post-format-label": "Post format",
+    "mastodon-title": "",
     "max.downloads": "Stjórnun niðurhals",
     "mini-player": "Nota minni spilarastíl",
     "notification-timeout": "Tímamörk tilkynninga",
@@ -207,6 +249,7 @@
     "shuffle-when-going-back": "Stokka á síðasta lagi",
     "shuffle-when-going-back-description": "Spila handahófskennt lag þegar stokkun er í gangi og síðasta lag takkin er smelltur",
     "social": "Félags",
+    "streaming": "Streaming",
     "track-duration": "Sýna lagalengd yfir leitarrimli",
     "user": "Notandi:",
     "youtube": "Youtube",

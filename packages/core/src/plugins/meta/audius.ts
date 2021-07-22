@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import _ from 'lodash';
 
 import MetaProvider from '../metaProvider';
@@ -128,7 +127,6 @@ class AudiusMetaProvider extends MetaProvider {
   async fetchAlbumDetails(): Promise<AlbumDetails> {
     throw new Error('Method not implemented.');
   }
-
 
   async fetchAlbumDetailsByName(): Promise<AlbumDetails> {
     throw new Error('Method not implemented.');

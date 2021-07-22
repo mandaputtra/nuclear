@@ -1,13 +1,17 @@
 # ![nuclear](https://i.imgur.com/oT1006i.png) 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a15c4888a63c900f6cc1/maintainability)](https://codeclimate.com/github/nukeop/nuclear/maintainability) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/30750586202742279fa8958a12e519ed)](https://www.codacy.com/app/nukeop/nuclear?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukeop/nuclear&amp;utm_campaign=Badge_Grade) [![nuclear](https://snapcraft.io//nuclear/badge.svg)](https://snapcraft.io/nuclear) ![Travis](https://api.travis-ci.org/nukeop/nuclear.svg?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a15c4888a63c900f6cc1/maintainability)](https://codeclimate.com/github/nukeop/nuclear/maintainability) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/30750586202742279fa8958a12e519ed)](https://www.codacy.com/app/nukeop/nuclear?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukeop/nuclear&amp;utm_campaign=Badge_Grade) [![nuclear](https://snapcraft.io//nuclear/badge.svg)](https://snapcraft.io/nuclear) [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/JqPjKxE)
 
 Desktop music player focused on streaming from free sources
 
-![Showcase](https://i.imgur.com/G9BqIHl.png)
+![Showcase](https://i.imgur.com/8qHu66J.png)
 
 # Links
 
 [Official website](https://nuclear.js.org)
+
+[Downloads](https://github.com/nukeop/nuclear/releases)
+
+[Documentation](https://nukeop.gitbook.io/nuclear/)
 
 [Mastodon](https://mstdn.io/@nuclear)
 
@@ -15,7 +19,7 @@ Desktop music player focused on streaming from free sources
 
 Support channel (Matrix): `#nuclear:matrix.org`
 
-Discord channel: https://discord.gg/JqPjKxE
+Discord chat: https://discord.gg/JqPjKxE
 
 Readme translations: 
 
@@ -56,22 +60,25 @@ See [this](docs/electron.md).
 - No CoC
 - No CLA
 
-## Manual and docs
-https://nuclearmusic.rtfd.io/
+## Development process
+
+First of all, be sure to check out the [Contribution Guidelines](https://nukeop.gitbook.io/nuclear/contributing/contribution-guidelines).
+
+The instructions for running Nuclear in development mode can be found in the [Development Process](https://nukeop.gitbook.io/nuclear/developer-resources/development-process) document.
 
 ## Community-maintained packages
 
 Here's a list of packages for various managers, some of which are maintained by third parties. We would like to thank the maintainers for their work.
 
-| Package type   | Link                                                               | Maintainer                                   |
-|:--------------:|:------------------------------------------------------------------:|:--------------------------------------------:|
-| AUR (Arch)     | https://aur.archlinux.org/packages/nuclear-player-bin/             | [nukeop](https://github.com/nukeop)          |
-| AUR (Arch)     | https://aur.archlinux.org/packages/nuclear-player-git              | [nukeop](https://github.com/nukeop)          |
-| Choco (Win)    | https://chocolatey.org/packages/nuclear/                           | [JourneyOver](https://github.com/JourneyOver)|
-| GURU (Gentoo)  | https://github.com/gentoo/guru/tree/master/media-sound/nuclear-bin | [scardracs](https://github.com/scardracs)    |
-| Homebrew (Mac) | https://formulae.brew.sh/cask/nuclear                              | Homebrew                                     |
-| Snap           | https://snapcraft.io/nuclear                                       | [nukeop](https://github.com/nukeop)          |
-| Flatpak        | https://flathub.org/apps/details/org.js.nuclear.Nuclear            | [nukeop](https://github.com/nukeop)          |
+| Package type   | Link                                                               | Maintainer                                   | Installation Method                           |
+|:--------------:|:------------------------------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|
+| AUR (Arch)     | https://aur.archlinux.org/packages/nuclear-player-bin/             | [nukeop](https://github.com/nukeop)          | yay -s nuclear-player-bin                     |
+| AUR (Arch)     | https://aur.archlinux.org/packages/nuclear-player-git              | [nukeop](https://github.com/nukeop)          | yay -s nuclear-player-git                     |
+| Choco (Win)    | https://chocolatey.org/packages/nuclear/                           | [JourneyOver](https://github.com/JourneyOver)| choco install nuclear                         |
+| GURU (Gentoo)  | https://github.com/gentoo/guru/tree/master/media-sound/nuclear-bin | [scardracs](https://github.com/scardracs)    | emerge nuclear-bin                            |
+| Homebrew (Mac) | https://formulae.brew.sh/cask/nuclear                              | Homebrew                                     | brew install --cask nuclear                   |
+| Snap           | https://snapcraft.io/nuclear                                       | [nukeop](https://github.com/nukeop)          | sudo snap install nuclear                     |
+| Flatpak        | https://flathub.org/apps/details/org.js.nuclear.Nuclear            | [nukeop](https://github.com/nukeop)          | flatpak install flathub org.js.nuclear.Nuclear|
 
 
 ## Community translations
@@ -89,64 +96,16 @@ Nuclear has already been translated to several languages, and we're always looki
 | Russian              | [ramstore07](https://github.com/ramstore07), [dmtrshat](https://github.com/dmtrshat)                        |
 | Brazilian Portuguese | [JoaoPedroMoraes](https://github.com/JoaoPedroMoraes)                                                       |
 | Turkish              | [3DShark](https://github.com/3DShark)                                                                       |
-| Italian              | [gello94](https://github.com/gello94)                                                                       |
+| Italian              | [gello94](https://github.com/gello94), [scardracs](https://github.com/scardracs)                            |
 | Slovak               | [MartinT](https://github.com/MartinTuroci)                                                                  |
 | Czech                | [PetrTodorov](https://github.com/PetrTodorov)                                                               |
 | Tagalog              | [giftofgrub](https://github.com/giftofgrub)                                                                 |
 | Traditional Chinese  | [oxygen-TW](https://github.com/oxygen-TW)                                                                   |
-| Swedish              | [PalleKarlsson](https://github.com/PalleKarlsson)                                                           |
+| Swedish              | [PalleKarlsson](https://github.com/PalleKarlsson), [nonew-star](https://github.com/nonew-star)                                                           |
 | Greek                | [Shuin-San](https://github.com/Shuin-San)                                                                   |
 | Vietnamese           | [HaiDang666](https://github.com/HaiDang666)                                                                 |
 | Finnish              | [cjola002-xamk](https://github.com/cjola002-xamk)                                                           |
 | Korean               | [dexterastin](https://github.com/dexterastin), [teamzamong](https://github.com/teamzamong/)                 |
-
-
-
-## Development process
-
-First of all, be sure to check out the [Contribution Wiki Page](https://github.com/nukeop/nuclear/wiki/Contributing).
-
-Use npm:
-```shell
-$ npm install # installs dependencies
-$ npm start
-```
-
-A new window should open that will load the web app and run Nuclear.
-
----
-To build for current operating system:
-```shell
-$ lerna bootstrap
-$ npm run build
-```
-
-Instead of `build` you can use `build:all` to build for all operating systems. The binaries will be in `packages/app/release`
-
----
-It's also possible to run the development environment using docker containers, but this should be considered experimental.
-
-You will need docker and docker-compose. You need to allow the root user to connect to X11 display, and then you can run docker-compose:
-
-```shell
-$ xhost SI:localuser:root
-$ sudo docker-compose up dev
-```
-As of now you can also build a flatpak version. You will need to install gobject-introspection, and flatpak-builder. After this you will need to install the runtimes and depedencies required by flatpak-builder for the compile process. You will need the 19.08 version of these flatpaks.
-```shell
-$ flatpak install flathub org.freedesktop.Platform
-$ flatpak install flathub org.freedesktop.Sdk
-$ flatpak install flathub io.atom.electron.BaseApp
-```
-Next, to build the project (use the `--verbose` flag to get more output):
-```shell
-$ flatpak-builder build-dir org.js.nuclear.Nuclear.json
-```
-To run the built app: 
-```shell
-$ flatpak-builder --run build-dir org.js.nuclear.Nuclear.json run.sh
-```
-You can turn the app to a local repo. currently the file builds the latest release.
 
 ## Screenshots
 This will be updated as the program evolves.
